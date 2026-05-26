@@ -25,7 +25,6 @@ body{
     position:relative;
 }
 
-/* BACKGROUND SPLIT */
 body::before{
     content:"";
     position:absolute;
@@ -33,7 +32,7 @@ body::before{
     height:100%;
     left:0;
     top:0;
-    background:url("C:/Users/91638/Downloads/ChatGPT Image May 26, 2026, 10_35_41 AM.png");
+    background:url("ChatGPT Image May 26, 2026, 10_35_41 AM.png");
     background-size:cover;
     background-position:center;
 }
@@ -45,12 +44,11 @@ body::after{
     height:100%;
     right:0;
     top:0;
-    background:url("C:/Users/91638/Downloads/ChatGPT Image May 26, 2026, 10_23_25 AM (1).png");
+    background:url("ChatGPT Image May 26, 2026, 10_23_25 AM (1).png");
     background-size:cover;
     background-position:center;
 }
 
-/* DARK OVERLAY */
 .overlay{
     position:absolute;
     width:100%;
@@ -59,7 +57,6 @@ body::after{
     z-index:1;
 }
 
-/* SHAYARI */
 .shayari{
     position:absolute;
     width:100%;
@@ -79,7 +76,6 @@ body::after{
     100%{transform:translateY(-120vh);}
 }
 
-/* HEARTS */
 .hearts span{
     position:absolute;
     bottom:-50px;
@@ -95,7 +91,6 @@ body::after{
     100%{transform:translateY(-120vh) scale(1.5);opacity:0;}
 }
 
-/* CARD */
 .card{
     position:relative;
     z-index:4;
@@ -133,7 +128,6 @@ h1{
     text-align:center;
 }
 
-/* SONG LINE */
 .song-line {
     margin-top: 14px;
     color: rgba(255,200,200,0.95);
@@ -152,7 +146,6 @@ h1{
     to   { text-shadow: 0 0 18px rgba(255,100,150,0.9), 0 0 30px rgba(255,50,100,0.4); }
 }
 
-/* MUSIC PLAYER */
 .player-wrap {
     margin-top: 18px;
     background: rgba(255,255,255,0.1);
@@ -167,7 +160,6 @@ h1{
     font-weight: 600;
     margin-bottom: 8px;
     opacity: 0.85;
-    letter-spacing: 0.3px;
 }
 
 .controls {
@@ -195,7 +187,6 @@ h1{
     box-shadow: 0 0 18px rgba(255,255,255,0.5);
 }
 
-/* Visualizer */
 .visualizer {
     display: none;
     justify-content: center;
@@ -223,7 +214,6 @@ h1{
     to   { height: 22px; }
 }
 
-/* BUTTONS */
 button.main-btn{
     margin-top:20px;
     padding:13px 32px;
@@ -243,7 +233,6 @@ button.main-btn:hover{
     box-shadow:0 0 20px rgba(255,255,255,0.5);
 }
 
-/* LOVE */
 .love{
     margin-top:18px;
     color:white;
@@ -264,12 +253,10 @@ button.main-btn:hover{
 
 <div class="overlay"></div>
 
-<!-- MP3 MUSIC -->
 <audio id="bgMusic" loop>
     <source src="Meri-Zindagi-Hai-Tu-2_0-Sabri-Sisters.mp3" type="audio/mpeg">
 </audio>
 
-<!-- SHAYARI -->
 <div class="shayari">
     <span style="left:10%;">💖 Mohabbat sirf tumse hai</span>
     <span style="left:30%; animation-delay:3s;">❤️ Tu hi meri zindagi hai</span>
@@ -277,7 +264,6 @@ button.main-btn:hover{
     <span style="left:70%; animation-delay:2s;">💕 Tu meri duaon mein hai</span>
 </div>
 
-<!-- HEARTS -->
 <div class="hearts">
     <span style="left:10%;">❤</span>
     <span style="left:25%; animation-delay:2s;">💖</span>
@@ -286,22 +272,19 @@ button.main-btn:hover{
     <span style="left:80%; animation-delay:3s;">💞</span>
 </div>
 
-<!-- CARD -->
 <div class="card">
 
-    <img src="C:/Users/91638/Downloads/ChatGPT Image May 26, 2026, 10_18_49 AM.png" class="dp">
+    <img src="ChatGPT Image May 26, 2026, 10_18_49 AM.png" class="dp">
 
     <h1>My Princess 👑</h1>
 
     <div class="typing" id="typing"></div>
 
-    <!-- SONG BEST LINE -->
     <div class="song-line">
         🎵 "Meri zindagi hai tu, meri bandagi hai tu<br>
         Tujh bin kahan jaunga, tu hi mera sab kuch hai" 🎵
     </div>
 
-    <!-- MUSIC PLAYER -->
     <div class="player-wrap">
         <div class="song-title">🎶 Meri Zindagi Hai Tu — Sabri Sisters</div>
         <div class="controls">
@@ -328,7 +311,6 @@ button.main-btn:hover{
 
 <script>
 
-// TYPING EFFECT
 let text = "You are my everything ❤️ My life, my happiness, my princess 👑";
 let i = 0;
 function typeEffect(){
@@ -340,12 +322,10 @@ function typeEffect(){
 }
 typeEffect();
 
-// LOVE
 function showLove(){
     document.getElementById("loveText").style.display = "block";
 }
 
-// MUSIC TOGGLE
 let isPlaying = false;
 const audio = document.getElementById("bgMusic");
 const playBtn = document.getElementById("playBtn");
@@ -358,7 +338,7 @@ function toggleMusic(){
             playBtn.textContent = "⏸ Pause";
             viz.classList.add("active");
         }).catch(e => {
-            console.log("Autoplay blocked, user interaction needed.", e);
+            console.log("Error:", e);
         });
     } else {
         audio.pause();
